@@ -5,9 +5,9 @@
 		$sql = "DELETE FROM paquetes WHERE id = '$id'";
 		$resultado = $grupo12->query($sql);
 		if($resultado){
-			header('Location: ../paquetes.php?resultado=exito');
+			header('Location: ../paquetes.php?eliminado=eliminado');
 		}else{
-			header('Location: ../paquetes.php?resultado=error');
+			header('Location: ../paquetes.php?eliminado=error-delete');
 		}
 	}
 ?>

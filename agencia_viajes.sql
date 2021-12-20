@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-12-2021 a las 09:39:50
+-- Tiempo de generación: 20-12-2021 a las 13:19:50
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.33
 
@@ -39,9 +39,14 @@ CREATE TABLE `paquetes` (
 --
 
 INSERT INTO `paquetes` (`id`, `nombre_paquete`, `precio`, `url_img`) VALUES
-(1, 'Madrid, España', 180, 'http://localhost/ceutec/proyecto-final/editar-paquetes.php?id=1&editar=true'),
-(2, 'Venecia, Italia', 350, 'http://localhost/ceutec/proyecto-final/agregar-paquetes.php'),
-(3, 'Boston, USA', 480, 'http://localhost/ceutec/proyecto-final/agregar-paquetes.php');
+(1, 'Benidorm, España', 180, 'images/landing-private-airlines-04-570x370.jpg'),
+(2, 'Venecia, Italia', 350, 'images/landing-private-airlines-03-570x370.jpg'),
+(3, 'Boston, USA', 480, 'images/landing-private-airlines-02-570x370.jpg'),
+(7, 'Francia, París', 280, 'images/landing-private-airlines-01-570x370.jpg'),
+(9, 'Londres, Inglaterra ', 600, 'images/landing-private-airlines-06-570x370.jpg'),
+(13, 'El Cairo, Egipto', 520, 'images/landing-private-airlines-05-570x370.jpg'),
+(38, 'Roatan, Honduras', 310, 'images/roatan.jpg'),
+(39, 'Utila, Honduras', 500, 'images/utila.jpg');
 
 -- --------------------------------------------------------
 
@@ -52,11 +57,35 @@ INSERT INTO `paquetes` (`id`, `nombre_paquete`, `precio`, `url_img`) VALUES
 CREATE TABLE `solicitudes` (
   `id` int(3) NOT NULL,
   `nombres` varchar(100) NOT NULL,
-  `apellidos` varchar(100) NOT NULL,
   `correo` varchar(100) NOT NULL,
   `celular` varchar(8) NOT NULL,
-  `paquetes` varchar(250) NOT NULL
+  `paquetes` varchar(250) NOT NULL,
+  `fecha_salida` date NOT NULL,
+  `estadia` varchar(10) NOT NULL,
+  `adultos` int(2) NOT NULL,
+  `ninos` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(2) NOT NULL,
+  `usuario` varchar(100) NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `contrasena` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `usuario`, `correo`, `contrasena`) VALUES
+(1, 'sinoe9891', 'sinoevelasquez@unitec.edu ', 'Stark989121'),
+(2, 'dvelasquez@zamorano.edu', 'dvelasquez@zamorano.edu', 'Stark9891');
 
 --
 -- Índices para tablas volcadas
@@ -75,6 +104,12 @@ ALTER TABLE `solicitudes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -82,13 +117,19 @@ ALTER TABLE `solicitudes`
 -- AUTO_INCREMENT de la tabla `paquetes`
 --
 ALTER TABLE `paquetes`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitudes`
 --
 ALTER TABLE `solicitudes`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

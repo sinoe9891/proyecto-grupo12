@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en"> 
   <head>
     <!-- Site Title-->
-    <title>Home</title>
+    <title>Agencia de Viajes</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fonts.css">
+	<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 		<!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"> </script>
@@ -86,7 +88,7 @@
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img class="logo-default" src="images/logo/logo-color-1.png" alt="" width="208" height="46"/><img class="logo-inverse" src="images/logo-inverse-208x46.png" alt="" width="208" height="46"/></a></div>
+                <div class="rd-navbar-brand"><a class="brand-name" href="index.php"><img class="logo-default" src="images/logo/logo-color-1.png" alt="" width="208" height="46"/><img class="logo-inverse" src="images/logo-inverse-208x46.png" alt="" width="208" height="46"/></a></div>
               </div>
               <div class="rd-navbar-aside-center">
                 <div class="rd-navbar-nav-wrap">
@@ -96,14 +98,12 @@
                     </li>
                     <li><a href="nosotros.php">Sobre Nosotros</a>
                     </li>
-                    <li><a href="contacts.html">Contacts</a>
-                    </li>
-                    <li><a href="typography.html">Typography</a>
+					<li><a href="paquetes-todos.php">Paquetes</a>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div class="rd-navbar-aside-right"><a class="button button-sm button-secondary button-nina" href="#">Book a tour now</a></div>
+              <div class="rd-navbar-aside-right"><a class="button button-sm button-secondary button-nina" href="login.php">Login</a></div>
             </div>
           </nav>
         </div>
