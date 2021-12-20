@@ -1,80 +1,87 @@
 <?php
-	include 'includes/conexion.php';
+include 'includes/template/header.php';
+include 'includes/conexion.php';
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Proyecto Final</title>
-</head>
-
-<body>
-	<div class="container">
-		<h1>Solicitudes de Clientes</h1>
-	</div>
-	<div class="menu">
-		<ul>
-			<a href="formulario.php">
-				<li>Fomulario</li>
+<section class="section section-lg text-center novi-background bg-cover" style="padding-bottom:0">
+	<div class="container container-wide">
+		<h3>Menú</h3>
+		<div class="divider divider-decorate"></div>
+		<br>
+		<div class="opciones">
+			<a href="paquetes.php">
+				<h3 style="font-size:20px"><span class="iconify" data-icon="akar-icons:arrow-right"></span>Ir a Paquetes</h3>
 			</a>
-			<li>Administración</li>
-			<ul>
-				<a href="paquetes.php">
-					<li>Paquetes</li>
-				</a>
-				<a href="solicitudes.php">
-					<li>Solicitudes</li>
-				</a>
-			</ul>
-		</ul>
+		</div>
 	</div>
-	<div class="agregar">
-		<a href="agregar-paquetes.php">
-			<button>Agregar Paquete</button>
-		</a>
-	</div>
-	<div class="paquetes" id="paquetes">
-		<table>
-			<tr>
-				<th>No.</th>
-				<th>Nombre Completo</th>
-				<th>Correo</th>
-				<th>Teléfono</th>
-				<th>Interesado en:</th>
-				<th>Gestionar</th>
-			</tr>
-			<?php
-				if($grupo12){
-					$consulta = "SELECT * FROM solicitudes";
-					$resultado = $grupo12->query($consulta);
-					if($resultado){
-						$i = 1;
-						while($fila = $resultado->fetch_assoc()){
-							echo "<tr>";
-							echo "<td>".$i."</td>";
-							echo "<td>".$fila['nombres']." ".$fila['apellidos']."</td>";
-							echo "<td>".$fila['correo']."</td>";
-							echo "<td>".$fila['celular']."</td>";
-							echo "<td>".$fila['paquetes']."</td>";
-							echo "<td>
-							<a href='editar-solicitud.php?id=".$fila['id']."&editar=true'>Editar</a>
-							<a href='includes/eliminar-solicitud.php?id=".$fila['id']."'>Eliminar</a>
-							</td>";
-							echo "</tr>";
-							$i++;
-						}
-					}else{
-						echo "No hay paquetes";
+</section>
+<section class="section text-center novi-background bg-cover">
+	<div class="container container-wide">
+		<h3>Todos las Solicitudes</h3>
+		<div class="divider divider-decorate"></div>
+		<div class="d-flex justify-content-center">
+			<div>
+				<?php
+				if (isset($_GET['eliminado'])) {
+					if ($_GET['eliminado'] == 'eliminado') {
+						echo '<div class="alert alert-success" role="alert">
+								<strong>¡Éxito!</strong> La Solicitud se ha eliminado correctamente.
+							</div>';
+					} elseif ($_GET['eliminado'] == 'error-delete') {
+						echo '<div class="alert alert-danger" role="alert">
+								<strong>¡Error!</strong> La Solicitud no se ha eliminado correctamente.
+							</div>';
 					}
-				}else{
-					echo "Error en conexión: " . $grupo12->error;
 				}
-			?>
-		</table>
-	</div>
-</body>
+				?>
 
-</html>
+				<div class="table">
+					<div class="agregar">
+						<div class="paquetes" id="paquetes">
+							<table>
+								<tr>
+									<th>No.</th>
+									<th>Nombre Completo</th>
+									<th>Correo</th>
+									<th>Interesado en:</th>
+									<th>Gestionar</th>
+								</tr>
+								<?php
+								if ($grupo12) {
+									$consulta = "SELECT * FROM solicitudes";
+									$resultado = $grupo12->query($consulta);
+									if ($resultado) {
+										$i = 1;
+										while ($fila = $resultado->fetch_assoc()) {
+											echo "<tr>";
+											echo "<td>" . $i . "</td>";
+											echo "<td>" . $fila['nombres'] . "</td>";
+											echo "<td>" . $fila['correo'] . "</td>";
+											echo "<td>" . $fila['paquetes'] . "</td>";
+											echo "<td>
+											<a href='ver-solicitud.php?id=" . $fila['id'] . "'><span class='iconify' data-icon='akar-icons:eye'></span>Ver</a>
+								<a href='includes/eliminar-solicitud.php?id=" . $fila['id'] . "'><span class='iconify' data-icon='bi:trash'></span>Eliminar</a>
+								</td>";
+											echo "</tr>";
+											$i++;
+										}
+									} else {
+										echo "No hay paquetes";
+									}
+								} else {
+									echo "Error en conexión: " . $grupo12->error;
+								}
+								?>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<?php
+include 'includes/template/footer.php';
+?>

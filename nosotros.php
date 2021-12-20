@@ -13,7 +13,7 @@
                 </figure>
                 <div class="team-classic-caption">
                   <h5><a class="team-classic-title" href="#">Danny Velásquez</a></h5>
-                  <p class="team-classic-job-position">Cta. 311</p>
+                  <p class="team-classic-job-position">Cta. 31121843</p>
                   <ul class="list-inline list-team">
                     <li class="list-inline-item"><a class="icon novi-icon icon-sm-bigger icon-gray-1 mdi mdi-facebook" href="#"></a></li>
                     <li class="list-inline-item"><a class="icon novi-icon icon-sm-bigger icon-gray-1 mdi mdi-twitter" href="#"></a></li>
@@ -21,7 +21,7 @@
                     <li class="list-inline-item"><a class="icon novi-icon icon-sm-bigger icon-gray-1 mdi mdi-google-plus" href="#"></a></li>
                     <li class="list-inline-item"><a class="icon novi-icon icon-sm-bigger icon-gray-1 mdi mdi-linkedin" href="#"></a></li>
                   </ul>
-                </div>
+                </div> 
               </div>
             </div>
             <div class="col-md-6 col-lg-3">

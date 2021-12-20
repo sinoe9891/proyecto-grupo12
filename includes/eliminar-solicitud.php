@@ -5,9 +5,9 @@
 		$sql = "DELETE FROM solicitudes WHERE id = '$id'";
 		$resultado = $grupo12->query($sql);
 		if($resultado){
-			header('Location: ../solicitudes.php?resultado=exito');
+			header('Location: ../solicitudes.php?eliminado=eliminado');
 		}else{
-			header('Location: ../solicitudes.php?resultado=error');
+			header('Location: ../solicitudes.php?eliminado=error-delete');
 		}
 	}
 ?>
