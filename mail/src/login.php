@@ -4,7 +4,6 @@
 	<meta name="robots" content="noindex,nofollow">
 	<meta http-equiv="x-dns-prefetch-control" content="off">
 	<script type="text/javascript" language="JavaScript">
-		<!--
 		if (self != top) {
 			try {
 				if (document.domain != top.document.domain) {
@@ -16,41 +15,10 @@
 			}
 		}
 		// 
-		-->
+		
 	</script>
 
 	<title>SquirrelMail - Login</title>
-	<script language="JavaScript" type="text/javascript">
-		<!--
-		var alreadyFocused = false;
-
-		function squirrelmail_loginpage_onload() {
-			document.login_form.js_autodetect_results.value = '1';
-			if (alreadyFocused) return;
-			var textElements = 0;
-			for (i = 0; i < document.login_form.elements.length; i++) {
-				if (document.login_form.elements[i].type == "text" || document.login_form.elements[i].type == "password") {
-					textElements++;
-					if (textElements == 1) {
-						document.login_form.elements[i].focus();
-						break;
-					}
-				}
-			}
-		}
-		// 
-		-->
-	</script>
-
-	<!--[if IE 6]>
-<style type="text/css">
-/* avoid stupid IE6 bug with frames and scrollbars */
-body {
-    width: expression(document.documentElement.clientWidth - 30);
-}
-</style>
-<![endif]-->
-
 </head>
 
 <body text="#000000" bgcolor="#ffffff" link="#0000cc" vlink="#0000cc" alink="#0000cc" onload="squirrelmail_loginpage_onload();">
