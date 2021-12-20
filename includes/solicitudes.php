@@ -16,7 +16,7 @@
 		$resultado = $grupo12->query($sql);
 		if($resultado){
 			echo "Paquete agregado";
-			header('Location: ../gracias.php?resultado=exito');
+			// header('Location: ../gracias.php?resultado=exito');
 		}else{
 			header('Location: ../gracias.php?resultado=error');
 			echo "Error al agregar paquete";
