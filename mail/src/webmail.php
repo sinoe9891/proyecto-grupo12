@@ -26,27 +26,7 @@ define('SM_PATH','../');
 require_once(SM_PATH . 'include/validate.php');
 require_once(SM_PATH . 'functions/imap.php');
 
-sqgetGlobalVar('username', $username, SQ_SESSION);
-sqgetGlobalVar('delimiter', $delimiter, SQ_SESSION);
-sqgetGlobalVar('onetimepad', $onetimepad, SQ_SESSION);
-sqgetGlobalVar('right_frame', $right_frame, SQ_GET);
-if (sqgetGlobalVar('sort', $sort)) {
-    $sort = (int) $sort;
-}
 
-if (sqgetGlobalVar('startMessage', $startMessage)) {
-    $startMessage = (int) $startMessage;
-}
-
-if (!sqgetGlobalVar('mailbox', $mailbox)) {
-    $mailbox = 'INBOX';
-}
-
-if(sqgetGlobalVar('mailtodata', $mailtodata)) {
-    $mailtourl = 'mailtodata='.urlencode($mailtodata);
-} else {
-    $mailtourl = '';
-}
 
 // this value may be changed by a plugin, but initialize
 // it first to avoid register_globals headaches
