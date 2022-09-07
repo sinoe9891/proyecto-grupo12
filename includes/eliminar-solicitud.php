@@ -3,7 +3,7 @@
 	if(isset($id)){
 		include 'conexion.php';
 		$sql = "DELETE FROM solicitudes WHERE id = '$id'";
-		$resultado = $grupo12->query($sql);
+		$resultado = $conn->query($sql);
 		if($resultado){
 			header('Location: ../solicitudes.php?eliminado=eliminado');
 		}else{

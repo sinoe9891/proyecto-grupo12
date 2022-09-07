@@ -1,6 +1,6 @@
 <?php
-	include 'includes/conexion.php';
-	$id_paquetes = $_GET['id'];
+include 'includes/conexion.php';
+$id_paquetes = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,16 +32,16 @@
 			</ul>
 		</ul>
 	</div>
-	<div class="formulario" >
+	<div class="formulario">
 		<?php
-			$consulta= $grupo12->query("SELECT * FROM paquetes where id = $id_paquetes");
-			if ($consulta->num_rows > 0) {
-				$fila = $consulta->fetch_assoc();
-				$nombre = $fila['nombre_paquete'];
-				$precio = $fila['precio'];
-				$id = $fila['id'];
-				$imagen = $fila['url_img'];
-			}
+		$consulta = $conn->query("SELECT * FROM paquetes where id = $id_paquetes");
+		if ($consulta->num_rows > 0) {
+			$fila = $consulta->fetch_assoc();
+			$nombre = $fila['nombre_paquete'];
+			$precio = $fila['precio'];
+			$id = $fila['id'];
+			$imagen = $fila['url_img'];
+		}
 		?>
 		<form action="includes/actualizar.php?id=<?php echo $id; ?>" method="post">
 			<input type="hidden" name="id" value="<?php echo $id; ?>">

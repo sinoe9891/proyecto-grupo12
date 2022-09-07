@@ -9,7 +9,9 @@ if (isset($editar)) {
 	$tipo = $_FILES['imagen']['type'];
 	$tamano = $_FILES['imagen']['size'];
 	$temp = $_FILES['imagen']['tmp_name'];
-	$ruta = 'D:/xampp7.2/htdocs/ceutec/proyecto-grupo12/images/'.$imagen;
+	$rutaactual = $_SERVER['DOCUMENT_ROOT'];
+	// $ruta = 'D:/xampp7.2/htdocs/ceutec/agencia-viajes/images/'.$imagen;
+	$ruta = '/Applications/XAMPP/xamppfiles/htdocs/ceutec/agencia-viajes/images/'.$imagen;
 	echo $ruta;
 	if(file_exists('images/'.$imagen)) {
 		chmod('images/'.$imagen,0777); //Change the file permissions if allowed
@@ -23,7 +25,7 @@ if (isset($editar)) {
 	//Mostramos el mensaje de que se ha subido co éxito
 	include 'conexion.php';
 	$sql = "UPDATE paquetes SET nombre_paquete = '$nombre', precio = '$precio', url_img = 'images/$imagen' WHERE id = '$id'";
-	$resultado = $grupo12->query($sql);
+	$resultado = $conn->query($sql);
 	if ($resultado) {
 		header('Location: ../paquetes.php?actualizar=exito');
 	} else {

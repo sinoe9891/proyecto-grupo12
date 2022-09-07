@@ -11,7 +11,7 @@
 	if(isset($editar)){
 		include 'conexion.php';
 		$sql = "UPDATE solicitudes SET nombres = '$nombre', correo = '$correo', celular = '$celular', paquetes = '$paquete' WHERE id = '$id'";
-		$resultado = $grupo12->query($sql);
+		$resultado = $conn->query($sql);
 		if($resultado){
 			header('Location: ../solicitudes.php?resultado=exito');
 		}else{

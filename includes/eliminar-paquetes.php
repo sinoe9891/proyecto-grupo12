@@ -3,7 +3,7 @@
 	if(isset($id)){
 		include 'conexion.php';
 		$sql = "DELETE FROM paquetes WHERE id = '$id'";
-		$resultado = $grupo12->query($sql);
+		$resultado = $conn->query($sql);
 		if($resultado){
 			header('Location: ../paquetes.php?eliminado=eliminado');
 		}else{

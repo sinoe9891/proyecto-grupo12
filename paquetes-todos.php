@@ -9,9 +9,9 @@ include 'includes/conexion.php';
 		<div class="divider divider-decorate"></div>
 		<div class="row row-50">
 			<?php
-			if ($grupo12) {
+			if ($conn) {
 				$consulta = "SELECT * FROM paquetes";
-				$resultado = $grupo12->query($consulta);
+				$resultado = $conn->query($consulta);
 				if ($resultado) {
 					$i = 1;
 					while ($fila = $resultado->fetch_assoc()) {
@@ -37,7 +37,7 @@ include 'includes/conexion.php';
 				</div>';
 				}
 			} else {
-				echo "Error en conexión: " . $grupo12->error;
+				echo "Error en conexión: " . $conn->error;
 			}
 			?>
 		</div>

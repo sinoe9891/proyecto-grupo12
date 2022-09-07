@@ -22,7 +22,7 @@ $id_paquetes = $_GET['id'];
 		<div class="d-flex justify-content-center">
 			<div style="width: 400px;">
 				<?php
-				$consulta = $grupo12->query("SELECT * FROM paquetes where id = $id_paquetes");
+				$consulta = $conn->query("SELECT * FROM paquetes where id = $id_paquetes");
 				if ($consulta->num_rows > 0) {
 					$fila = $consulta->fetch_assoc();
 					$nombre = $fila['nombre_paquete'];
@@ -30,6 +30,13 @@ $id_paquetes = $_GET['id'];
 					$id = $fila['id'];
 					$imagen = $fila['url_img'];
 				}
+				// echo $imagen . '<br>';
+				// echo getcwd() . '<br>';
+				// echo $_SERVER['DOCUMENT_ROOT'] . '<br>';
+				// echo $_SERVER["HTTP_HOST"] . '<br>' . $_SERVER["REQUEST_URI"] . '<br>';
+				$rutaactual = getcwd();
+				$ruta = $rutaactual .'/'. $imagen;
+				echo $ruta;
 				?>
 				<form action="includes/actualizar.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="id" value="<?php echo $id; ?>">
@@ -50,7 +57,7 @@ $id_paquetes = $_GET['id'];
 						<div class="form-wrap form-wrap-validation">
 							<label for="Imagen">URl de Imagen</label><br>
 							<img src='<?php echo $imagen; ?>' alt='' width='100px'>
-							<input class="form-input form-control-has-validation form-control-last-child" name="imagen" id="imagen" type="file" required/>
+							<input class="form-input form-control-has-validation form-control-last-child" name="imagen" id="imagen" type="file" required />
 						</div>
 					</div>
 					<div class="col-sm-12">

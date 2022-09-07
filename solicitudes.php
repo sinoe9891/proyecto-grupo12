@@ -48,9 +48,9 @@ include 'includes/conexion.php';
 									<th>Gestionar</th>
 								</tr>
 								<?php
-								if ($grupo12) {
+								if ($conn) {
 									$consulta = "SELECT * FROM solicitudes";
-									$resultado = $grupo12->query($consulta);
+									$resultado = $conn->query($consulta);
 									if ($resultado) {
 										$i = 1;
 										while ($fila = $resultado->fetch_assoc()) {
@@ -70,7 +70,7 @@ include 'includes/conexion.php';
 										echo "No hay paquetes";
 									}
 								} else {
-									echo "Error en conexión: " . $grupo12->error;
+									echo "Error en conexión: " . $conn->error;
 								}
 								?>
 							</table>

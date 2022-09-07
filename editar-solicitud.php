@@ -34,7 +34,7 @@
 	</div>
 	<div class="formulario" >
 		<?php
-			$consulta= $grupo12->query("SELECT * FROM solicitudes where id = $id_paquetes");
+			$consulta= $conn->query("SELECT * FROM solicitudes where id = $id_paquetes");
 			if ($consulta->num_rows > 0) {
 				$fila = $consulta->fetch_assoc();
 				$nombre = $fila['nombres'];
